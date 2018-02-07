@@ -1,7 +1,7 @@
 export const users = (state = [], action) => {
   switch (action.type) {
     case 'GET_USERS_SUCCESS':
-      return state;
+      return action.payload;
     default:
       return state;
   }
