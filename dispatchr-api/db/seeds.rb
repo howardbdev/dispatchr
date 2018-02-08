@@ -8,3 +8,11 @@
 100.times do
   User.create(first_name: Faker::FamilyGuy.character, email: Faker::Internet.email, nsp_number: Faker::Number.number(6))
 end
+
+15.times do
+  Trail.create(name: Faker::StarWars.planet, rating: Faker::Number.number(1), peak: "East")
+end
+
+35.times do
+  Trail.create(name: Faker::StarWars.planet, rating: Faker::Number.number(1), peak: "West")
+end
