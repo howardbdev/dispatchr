@@ -3,14 +3,13 @@ class UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all
-
-    render json: @users
+    users = User.all.map{|u| UserSerializer.new(u).serializable_hash}
+    render json: users
   end
 
   # GET /users/1
   def show
-    render json: @user
+    render json: UserSerializer.new(@user).serialized_json
   end
 
   # POST /users
