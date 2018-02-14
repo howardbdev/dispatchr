@@ -6,6 +6,7 @@ class MainContainer extends React.Component {
 
   componentDidMount() {
     this.props.fetchUsers()
+    this.props.fetchTrails()
   }
 
   render() {
@@ -18,9 +19,10 @@ class MainContainer extends React.Component {
   }
 }
 
-const mapStateToProps = ({users}) => {
+const mapStateToProps = ({users, trails}) => {
   return {
-    users
+    users,
+    trails
   }
 }
 
