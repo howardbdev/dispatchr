@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180215032357) do
+ActiveRecord::Schema.define(version: 20180222012639) do
 
   create_table "dispatches", force: :cascade do |t|
     t.string "classification"
@@ -24,6 +24,13 @@ ActiveRecord::Schema.define(version: 20180215032357) do
     t.string "name"
     t.string "peak"
     t.string "rating"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "user_dispatches", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "dispatch_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

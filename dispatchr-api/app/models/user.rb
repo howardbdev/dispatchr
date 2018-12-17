@@ -1,8 +1,6 @@
 class User < ApplicationRecord
-  has_many :dispatches
-  attr_accessor :full_name
+  has_many :dispatches, foreign_key: :dispatcher_id
 
-  def full_name
-    "#{first_name} #{last_name}"
-  end
+  has_many :user_dispatches
+  has_many :assignments, through: :user_dispatches, source: :dispatch  
 end
